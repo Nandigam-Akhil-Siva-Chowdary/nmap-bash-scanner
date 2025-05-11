@@ -1,0 +1,114 @@
+Ping Scan Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 04:53 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.16s latency).
+Nmap done: 1 IP address (1 host up) scanned in 0.31 seconds
+
+
+Quick Port Scan Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 04:53 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.100s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 12.42 seconds
+
+
+Comprehensive Port Scan Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 04:53 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.054s latency).
+Not shown: 65532 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+443/tcp open  https
+853/tcp open  domain-s
+
+Nmap done: 1 IP address (1 host up) scanned in 109.26 seconds
+
+
+Service Version Detection Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 04:55 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.15s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+53/tcp  open  tcpwrapped
+443/tcp open  ssl/https  HTTP server (unknown)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 92.80 seconds
+
+
+OS Detection Results:
+TCP/IP fingerprinting (for OS scan) requires root privileges.
+QUITTING!
+
+
+Vulnerability Scan Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 04:57 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.14s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+443/tcp open  https
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=dns.google
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: https://dns.google:443/
+|     Form id: 
+|     Form action: /query
+|     
+|     Path: https://dns.google:443/cache
+|     Form id: main-form
+|     Form action: /cache
+|     
+|     Path: https://dns.google:443/query
+|     Form id: rr_types
+|_    Form action: /query
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+
+Nmap done: 1 IP address (1 host up) scanned in 270.31 seconds
+
+
+Full Comprehensive Scan Results:
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-11 05:01 UTC
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.13s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+53/tcp  open  tcpwrapped
+443/tcp open  ssl/https  HTTP server (unknown)
+| ssl-cert: Subject: commonName=dns.google
+| Subject Alternative Name: DNS:dns.google, DNS:dns.google.com, DNS:*.dns.google.com, DNS:8888.google, DNS:dns64.dns.google, IP Address:8.8.8.8, IP Address:8.8.4.4, IP Address:2001:4860:4860:0:0:0:0:8888, IP Address:2001:4860:4860:0:0:0:0:8844, IP Address:2001:4860:4860:0:0:0:0:6464, IP Address:2001:4860:4860:0:0:0:0:64
+| Not valid before: 2025-04-21T08:42:40
+|_Not valid after:  2025-07-14T08:42:39
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings: 
+|   DNSStatusRequestTCP: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Length: 54
+|     Content-Type: text/html; charset=UTF-8
+|     Date: Sun, 11 May 2025 05:02:08 GMT
+|_    <html><title>Error 400 (Bad Request)!!1</title></html>
+|_http-title: Google Public DNS
+| http-server-header: 
+|   HTTP server (unknown)
+|_  scaffolding on HTTPServer2
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=5/11%Time=68202F50%P=x86_64-unknown-linu
+SF:x-gnu%r(DNSStatusRequestTCP,B3,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nC
+SF:ontent-Length:\x2054\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\
+SF:nDate:\x20Sun,\x2011\x20May\x202025\x2005:02:08\x20GMT\r\n\r\n<html><ti
+SF:tle>Error\x20400\x20\(Bad\x20Request\)!!1</title></html>");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 95.24 seconds
+
+
